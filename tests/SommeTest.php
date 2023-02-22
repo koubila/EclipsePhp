@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/';
+require_once __DIR__ . '../phpunit';
 use PHPUnit\Framework\TestCase;
 
 
