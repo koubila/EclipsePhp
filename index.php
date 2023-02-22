@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Calcul de somme</title>
+	<head>
+    	<title>Calcul de somme</title>
+    </head>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,38 +51,38 @@
             background-color: #3e8e41;
         }
     </style>
-    <h1>Calcul de somme</h1>
+    <body>
+    	<h1>Calcul de somme</h1>
 
-    <!-- Formulaire pour saisir les deux nombres -->
-    <form method="POST" action="">
+    	<form method="POST" action="">
 
-        <label for="nombre1">Premier nombre :</label>
-        <input type="number" name="nombre1" id="nombre1"><br>
+        	<label for="nombre1">Premier nombre :</label>
+        	<input type="number" name="nombre1" id="nombre1"><br>
 
-        <label for="nombre2">Deuxième nombre :</label>
-        <input type="number" name="nombre2" id="nombre2"><br>
+        	<label for="nombre2">Deuxième nombre :</label>
+        	<input type="number" name="nombre2" id="nombre2"><br>
 
-        <input type="submit" value="Calculer la somme">
+        	<input type="submit" value="Additionner">
 
-    </form>
-
-    <?php
+    	</form>
+<body>
+<?php
 
     // Vérification si les entrées sont soumises par l'utilisateur
     if(isset($_POST['nombre1']) && isset($_POST['nombre2'])) {
+        try{
+            // Récupération des entrées depuis le formulaire
+            $num1 = $_POST['nombre1'];
+            $num2 = $_POST['nombre2'];
 
-        // Récupération des entrées depuis le formulaire
-        $num1 = $_POST['nombre1'];
-        $num2 = $_POST['nombre2'];
+            // Calcul de la somme des deux nombres
+            $sum = $num1 + $num2;
 
-        // Calcul de la somme des deux nombres
-        $sum = $num1 + $num2;
-
-        // Affichage du résultat
-        echo "<p>La somme de $num1 et $num2 est égale à : $sum</p>";
+            // Affichage du résultat
+            echo "<p>La somme de $num1 et $num2 est égale à : $sum</p>";
+        }catch (ErrorException $e){
+            echo "<p>Une erreur est survenue : " . $e->getMessage() . "</p>";
+        }
 
     }
-
-    ?>
-</head>
-<body> 
+?> 
